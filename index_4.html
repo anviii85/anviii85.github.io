@@ -1,0 +1,533 @@
+<title>Anvita Chitradurga Sudhindra</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600;700&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap');
+
+  :root{
+    --bg:#f6f3ea;
+    --bg-raised:#fbf9f3;
+    --ink:#14181f;
+    --ink-dim:#5b6068;
+    --line:#ddd6c4;
+    --line-strong:#c9c0a8;
+    --accent:#1f5fa8;
+    --accent-ink:#f5f9ff;
+    --teal:#2f6f66;
+    --code-bg:#ece5d2;
+    --shadow: 0 1px 0 rgba(20,24,31,0.04);
+    --radius: 3px;
+  }
+  @media (prefers-color-scheme: dark){
+    :root:not([data-theme="light"]){
+      --bg:#0e1216;
+      --bg-raised:#151a20;
+      --ink:#edeef0;
+      --ink-dim:#98a0a8;
+      --line:#262c33;
+      --line-strong:#333a42;
+      --accent:#5b9dff;
+      --accent-ink:#08152a;
+      --teal:#5fb0a4;
+      --code-bg:#1a2026;
+      --shadow: 0 1px 0 rgba(0,0,0,0.3);
+    }
+  }
+  :root[data-theme="dark"]{
+    --bg:#0e1216;
+    --bg-raised:#151a20;
+    --ink:#edeef0;
+    --ink-dim:#98a0a8;
+    --line:#262c33;
+    --line-strong:#333a42;
+    --accent:#5b9dff;
+    --accent-ink:#08152a;
+    --teal:#5fb0a4;
+    --code-bg:#1a2026;
+    --shadow: 0 1px 0 rgba(0,0,0,0.3);
+  }
+
+  *{ box-sizing:border-box; }
+  html{ scroll-behavior:smooth; }
+  body{
+    margin:0;
+    background:var(--bg);
+    color:var(--ink);
+    font-family:'IBM Plex Sans', ui-sans-serif, system-ui, sans-serif;
+    font-size:16px;
+    line-height:1.6;
+  }
+  ::selection{ background:var(--accent); color:var(--accent-ink); }
+
+  .mono{ font-family:'IBM Plex Mono', ui-monospace, 'SFMono-Regular', monospace; }
+
+  a{ color:inherit; }
+
+  .wrap{
+    max-width:1040px;
+    margin:0 auto;
+    padding:0 28px;
+  }
+
+  /* ---------- NAV ---------- */
+  header.nav{
+    position:sticky; top:0; z-index:40;
+    background:color-mix(in srgb, var(--bg) 88%, transparent);
+    backdrop-filter:blur(8px);
+    border-bottom:1px solid var(--line);
+  }
+  .nav-inner{
+    display:flex; align-items:center; justify-content:space-between;
+    padding:14px 28px;
+    max-width:1040px; margin:0 auto;
+  }
+  .nav-id{
+    font-size:12.5px; letter-spacing:.06em;
+  }
+  .nav-id b{ color:var(--accent); }
+  .nav-links{
+    display:flex; gap:22px; list-style:none; margin:0; padding:0;
+    font-size:12.5px; letter-spacing:.04em;
+  }
+  .nav-links a{
+    text-decoration:none; color:var(--ink-dim);
+    border-bottom:1px solid transparent;
+    padding-bottom:2px;
+  }
+  .nav-links a:hover, .nav-links a:focus-visible{ color:var(--ink); border-color:var(--accent); outline:none; }
+  .nav-links .n{ color:var(--accent); margin-right:5px; }
+  @media (max-width:720px){ .nav-links{ display:none; } }
+
+  /* ---------- HERO ---------- */
+  .hero{
+    padding:56px 0 40px;
+    border-bottom:1px solid var(--line);
+    position:relative;
+    overflow:hidden;
+  }
+  .hero-grid{ max-width:640px; }
+
+  .eyebrow{
+    font-size:12px; letter-spacing:.14em; text-transform:uppercase;
+    color:var(--ink-dim); margin:0 0 16px;
+    display:flex; align-items:center; gap:10px;
+  }
+  .eyebrow .dot{ width:6px; height:6px; background:var(--accent); display:inline-block; border-radius:1px; }
+
+  .hero h1{
+    font-family:'IBM Plex Mono', monospace;
+    font-weight:600;
+    font-size:clamp(28px, 4.4vw, 44px);
+    line-height:1.08;
+    margin:0 0 14px;
+    text-wrap:balance;
+    letter-spacing:-0.01em;
+  }
+  .hero .role{
+    font-size:17px;
+    color:var(--ink-dim);
+    max-width:52ch;
+    margin:0 0 22px;
+  }
+  .hero .role strong{ color:var(--ink); font-weight:600; }
+
+  .partno{
+    display:inline-block;
+    font-size:11.5px;
+    border:1px solid var(--line-strong);
+    border-radius:var(--radius);
+    padding:3px 8px;
+    color:var(--ink-dim);
+    margin-bottom:18px;
+    background:var(--code-bg);
+  }
+  .partno b{ color:var(--ink); }
+
+  .hero-links{
+    display:flex; flex-wrap:wrap; gap:10px;
+    margin-top:6px;
+  }
+  .hero-links a{
+    display:inline-flex; align-items:center; gap:7px;
+    font-size:13px;
+    text-decoration:none;
+    padding:8px 13px;
+    border:1px solid var(--line-strong);
+    border-radius:var(--radius);
+    background:var(--bg-raised);
+    transition:border-color .15s ease, transform .15s ease;
+  }
+  .hero-links a:hover{ border-color:var(--accent); }
+  .hero-links a.primary{
+    background:var(--accent); color:var(--accent-ink); border-color:var(--accent);
+    font-weight:600;
+  }
+  .hero-links a svg{ width:13px; height:13px; }
+
+  /* ---------- SPEC STRIP (education / quick facts) ---------- */
+  .specstrip{
+    display:grid; grid-template-columns:repeat(4,1fr);
+    border-bottom:1px solid var(--line);
+  }
+  .specstrip div{
+    padding:18px 20px;
+    border-left:1px solid var(--line);
+  }
+  .specstrip div:first-child{ border-left:none; }
+  @media (max-width:720px){
+    .specstrip{ grid-template-columns:repeat(2,1fr); }
+    .specstrip div:nth-child(3){ border-left:none; }
+  }
+  .specstrip .k{ font-size:11px; letter-spacing:.08em; color:var(--ink-dim); text-transform:uppercase; display:block; margin-bottom:6px;}
+  .specstrip .v{ font-size:15px; font-weight:600; }
+  .specstrip .v.small{ font-size:13.5px; font-weight:500; color:var(--ink-dim); }
+
+  /* ---------- SECTIONS ---------- */
+  section{ padding:64px 0; border-bottom:1px solid var(--line); }
+  section:last-of-type{ border-bottom:none; }
+  .sec-head{
+    display:flex; align-items:baseline; gap:12px;
+    margin-bottom:30px;
+  }
+  .sec-head .num{ font-family:'IBM Plex Mono',monospace; color:var(--accent); font-size:14px; }
+  .sec-head h2{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:13px; letter-spacing:.16em; text-transform:uppercase;
+    margin:0; color:var(--ink);
+  }
+  .sec-head .rule{ flex:1; height:1px; background:var(--line); }
+
+  /* summary */
+  .summary-grid{ display:grid; grid-template-columns:1fr 240px; gap:40px; }
+  @media (max-width:800px){ .summary-grid{ grid-template-columns:1fr; } }
+  .summary-grid p{ max-width:66ch; color:var(--ink); }
+  .summary-grid .side{ font-size:13px; }
+  .side-item{ padding:10px 0; border-top:1px solid var(--line); }
+  .side-item:first-child{ border-top:none; }
+  .side-item .k{ color:var(--ink-dim); letter-spacing:.06em; text-transform:uppercase; font-size:10.5px; display:block; margin-bottom:4px; }
+
+  /* experience timeline */
+  .timeline{ position:relative; padding-left:130px; }
+  .timeline::before{
+    content:""; position:absolute; left:110px; top:6px; bottom:6px; width:1px; background:var(--line-strong);
+  }
+  .tl-row{ position:relative; margin-bottom:40px; }
+  .tl-row:last-child{ margin-bottom:0; }
+  .tl-date{
+    position:absolute; left:-130px; top:2px; width:104px; text-align:right;
+    font-size:11.5px; color:var(--ink-dim); line-height:1.4;
+  }
+  .tl-row::after{
+    content:""; position:absolute; left:-24px; top:6px; width:9px; height:9px;
+    border-radius:50%; background:var(--bg); border:2px solid var(--accent);
+  }
+  .tl-card h3{ margin:0 0 3px; font-size:16.5px; font-weight:600; }
+  .tl-card .co{ font-size:13px; color:var(--teal); margin-bottom:10px; font-weight:600; }
+  .tl-card ul{ margin:0; padding-left:18px; font-size:14.5px; color:var(--ink); }
+  .tl-card li{ margin-bottom:7px; }
+  .tl-card li:last-child{ margin-bottom:0; }
+  @media (max-width:640px){
+    .timeline{ padding-left:26px; }
+    .timeline::before{ left:6px; }
+    .tl-date{ position:static; text-align:left; margin-bottom:6px; width:auto; }
+    .tl-row::after{ left:-22px; }
+  }
+
+  /* projects */
+  .proj-grid{
+    display:grid; grid-template-columns:repeat(auto-fill, minmax(280px,1fr));
+    gap:18px;
+  }
+  .card{
+    border:1px solid var(--line-strong);
+    border-radius:var(--radius);
+    background:var(--bg-raised);
+    padding:18px 18px 16px;
+    display:flex; flex-direction:column;
+    box-shadow:var(--shadow);
+  }
+  .card-head{ display:flex; justify-content:space-between; align-items:flex-start; gap:10px; margin-bottom:10px; }
+  .card-head h3{ font-size:15.5px; margin:0; line-height:1.35; font-weight:600; }
+  .datecode{
+    flex:none; font-size:10px; color:var(--ink-dim);
+    border:1px solid var(--line-strong); border-radius:2px; padding:2px 5px;
+    white-space:nowrap;
+  }
+  .card ul{ margin:0 0 14px; padding-left:17px; font-size:13.8px; color:var(--ink-dim); flex:1; }
+  .card li{ margin-bottom:6px; }
+  .tags{ display:flex; flex-wrap:wrap; gap:6px; margin-top:auto; }
+  .tag{
+    font-size:11px; padding:3px 7px; border-radius:2px;
+    background:var(--code-bg); color:var(--ink); border:1px solid var(--line);
+  }
+
+  /* skills spec table */
+  .spectable{ border-top:1px solid var(--line); }
+  .spec-row{
+    display:grid; grid-template-columns:220px 1fr;
+    gap:20px; padding:14px 0; border-bottom:1px solid var(--line);
+  }
+  @media (max-width:640px){ .spec-row{ grid-template-columns:1fr; gap:4px; } }
+  .spec-row .cat{ font-size:12px; letter-spacing:.05em; color:var(--teal); font-weight:600; text-transform:uppercase; }
+  .spec-row .val{ font-size:14px; color:var(--ink); }
+
+  /* certifications */
+  .cert-list{ list-style:none; margin:0; padding:0; display:grid; gap:2px; }
+  .cert-list li{
+    display:grid; grid-template-columns:14px 1fr; gap:12px;
+    padding:12px 0; border-top:1px solid var(--line); font-size:14.5px;
+  }
+  .cert-list li:first-child{ border-top:none; }
+  .cert-list .mk{ color:var(--accent); }
+  .cert-list .name{ font-weight:600; }
+  .cert-list .iss{ color:var(--ink-dim); font-size:13px; }
+
+  /* contact / pinout footer */
+  footer{ padding:60px 0 50px; }
+  .pin-note{ max-width:60ch; color:var(--ink-dim); margin-bottom:34px; font-size:15px; }
+  .pin-note strong{ color:var(--ink); }
+  .pinout{
+    display:grid; grid-template-columns:repeat(4,1fr); gap:1px;
+    background:var(--line); border:1px solid var(--line);
+    border-radius:var(--radius); overflow:hidden;
+  }
+  @media (max-width:720px){ .pinout{ grid-template-columns:repeat(2,1fr); } }
+  .pin{
+    background:var(--bg-raised); padding:18px 16px; text-decoration:none; color:var(--ink);
+    display:flex; flex-direction:column; gap:6px;
+    transition:background .15s ease;
+  }
+  .pin:hover{ background:var(--code-bg); }
+  .pin .num{ font-size:10px; color:var(--accent); }
+  .pin .lbl{ font-size:10.5px; letter-spacing:.08em; color:var(--ink-dim); text-transform:uppercase; }
+  .pin .v{ font-size:13.5px; font-weight:600; word-break:break-word; }
+  .foot-end{
+    margin-top:40px; padding-top:20px; border-top:1px solid var(--line);
+    display:flex; justify-content:space-between; flex-wrap:wrap; gap:10px;
+    font-size:12px; color:var(--ink-dim);
+  }
+
+  @media (prefers-reduced-motion: reduce){
+    html{ scroll-behavior:auto; }
+  }
+</style>
+
+<header class="nav">
+  <div class="nav-inner">
+    <div class="nav-id mono">Anvita C S</div>
+    <ul class="nav-links mono">
+      <li><a href="#summary">Summary</a></li>
+      <li><a href="#experience">Experience</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#certifications">Certs</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </div>
+</header>
+
+<div class="hero">
+  <div class="wrap hero-grid">
+    <div>
+      <p class="eyebrow"><span class="dot"></span>Engineering Profile · Bengaluru, India</p>
+      <div class="partno mono">P/N <b>ACS27&#8209;EMB</b> &nbsp;·&nbsp; REV 2026.09</div>
+      <h1>Anvita Chitradurga<br>Sudhindra</h1>
+      <p class="role"><strong>Embedded Systems Engineer</strong> — bare&#8209;metal firmware, IoT &amp; hardware validation. Final&#8209;year ECE undergraduate building on ARM Cortex&#8209;M, ESP32, AVR and Raspberry Pi across firmware, RTL and test.</p>
+      <div class="hero-links mono">
+        <a class="primary" href="mailto:anvitaghorpade@gmail.com">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 6h18v12H3z"/><path d="m3 7 9 6 9-6"/></svg>
+          Email
+        </a>
+        <a href="tel:+918792778897">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3 19.5 19.5 0 0 1-6-6 19.8 19.8 0 0 1-3-8.7A2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .3 2 .6 3a2 2 0 0 1-.5 2L8 10a16 16 0 0 0 6 6l1.3-1.2a2 2 0 0 1 2-.5c1 .3 2 .5 3 .6a2 2 0 0 1 1.7 2z"/></svg>
+          +91 87927 78897
+        </a>
+        <a href="https://www.linkedin.com/in/anvita-c-s-a52881359/" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M4.98 3.5C4.98 4.88 3.87 6 2.5 6S0 4.88 0 3.5 1.12 1 2.5 1s2.48 1.12 2.48 2.5zM.5 8h4V23h-4V8zm7.5 0h3.8v2.05h.05c.53-1 1.83-2.05 3.77-2.05 4.03 0 4.78 2.65 4.78 6.1V23h-4v-6.9c0-1.65-.03-3.77-2.3-3.77-2.3 0-2.66 1.8-2.66 3.65V23h-4V8z"/></svg>
+          LinkedIn
+        </a>
+        <a href="https://github.com/anviii85" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 .5C5.7.5.5 5.7.5 12c0 5 3.3 9.3 7.9 10.8.6.1.8-.3.8-.6v-2.1c-3.2.7-3.9-1.5-3.9-1.5-.5-1.3-1.3-1.7-1.3-1.7-1.1-.7.1-.7.1-.7 1.2.1 1.8 1.2 1.8 1.2 1.1 1.8 2.8 1.3 3.5 1 .1-.8.4-1.3.7-1.6-2.6-.3-5.3-1.3-5.3-5.7 0-1.3.4-2.3 1.2-3.1-.1-.3-.5-1.5.1-3.1 0 0 1-.3 3.3 1.2a11.4 11.4 0 0 1 6 0c2.3-1.5 3.3-1.2 3.3-1.2.6 1.6.2 2.8.1 3.1.8.8 1.2 1.9 1.2 3.1 0 4.4-2.7 5.4-5.3 5.7.4.4.8 1.1.8 2.2v3.3c0 .3.2.7.8.6A11.5 11.5 0 0 0 23.5 12C23.5 5.7 18.3.5 12 .5z"/></svg>
+          GitHub
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <div class="wrap specstrip">
+    <div><span class="k">Institution</span><span class="v small">Dayananda Sagar College of Engineering</span></div>
+    <div><span class="k">Program</span><span class="v small">B.E. Electronics &amp; Communication Engineering</span></div>
+    <div><span class="k">CGPA</span><span class="v">7.94 / 10</span></div>
+    <div><span class="k">Graduating</span><span class="v">2027</span></div>
+  </div>
+</div>
+
+<main class="wrap">
+
+  <section id="summary">
+    <div class="sec-head"><h2>General Description</h2><span class="rule"></span></div>
+    <div class="summary-grid">
+      <p>Final&#8209;year Electronics and Communication Engineering undergraduate with hands&#8209;on experience developing bare&#8209;metal, no&#8209;OS firmware in C on ARM Cortex&#8209;M microcontroller SoCs (STM32) and ESP32, plus 8&#8209;bit (Arduino/AVR) and Raspberry Pi platforms, across 8+ embedded, IoT and robotics projects. Skilled in register&#8209; and memory&#8209;level interfacing, low&#8209;level API and device driver design, and protocol&#8209;level firmware (CAN, I2C, SPI, UART, GPIO, PWM, Bluetooth/BLE). Experienced in RTL simulation and waveform&#8209;level debugging (Verilog/SystemVerilog) and hardware&#8209;software co&#8209;verification, alongside hands&#8209;on hardware bring&#8209;up and bench testing using ST&#8209;Link/SWD debuggers, oscilloscopes and DMMs. Comfortable in Linux (Raspberry Pi OS) with Git version control; strong C, C++ and Python fundamentals, HackerRank&#8209;certified.</p>
+      <div class="side mono">
+        <div class="side-item"><span class="k">Platforms</span>STM32 · ESP32 · AVR · Raspberry Pi</div>
+        <div class="side-item"><span class="k">Interfaces</span>CAN · I2C · SPI · UART · BLE</div>
+        <div class="side-item"><span class="k">Bench</span>ST&#8209;Link/SWD · Scope · DMM</div>
+        <div class="side-item"><span class="k">Seeking</span>Embedded/IoT roles · MS ECE</div>
+      </div>
+    </div>
+  </section>
+
+  <section id="experience">
+    <div class="sec-head"><h2>Experience</h2><span class="rule"></span></div>
+    <div class="timeline">
+
+      <div class="tl-row">
+        <div class="tl-date mono">FEB 2026<br>— APR 2026</div>
+        <div class="tl-card">
+          <h3>Student Project Intern</h3>
+          <div class="co">Havells India Ltd.</div>
+          <ul>
+            <li>Performed structured Bluetooth Low Energy (BLE) functional and connectivity testing on Havells smart appliances (AC, fan, air purifier, water purifier, washing machine) across Android and iOS, including device pairing, synchronization and remote&#8209;control validation, using a Havells&#8209;provided BLE test APK.</li>
+            <li>Collaborated on a cross&#8209;functional 4&#8209;person team spanning EC, ISE and AIML disciplines to execute functional, regression, UI/UX and performance&#8209;and&#8209;stability testing over a 12&#8209;week cycle, reporting defects through a faculty&#8209;mentor&#8209;verified pipeline within a cohort&#8209;wide effort that logged 532 reported and 130 verified defects (23 critical).</li>
+            <li>Reported 13 defects as part of the team's testing effort — including 1 verified critical issue — escalating findings through structured bug reports and weekly review meetings with Havells engineers and faculty mentors.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="tl-row">
+        <div class="tl-date mono">JUL 2025<br>— DEC 2025</div>
+        <div class="tl-card">
+          <h3>Embedded Systems Engineer Intern</h3>
+          <div class="co">Elomelo Refresh</div>
+          <ul>
+            <li>Engineered and rapidly prototyped a robotic hand mechanism for automated pick&#8209;and&#8209;place operations targeting agricultural applications, using GPIO control and PWM signal generation to drive actuation, validating the design through RoboDK&#8209;based simulation.</li>
+            <li>Collaborated with a multidisciplinary team on system architecture and design, electronics circuits, hardware bring&#8209;up and hardware&#8209;software co&#8209;verification across the robotic development cycle, conducting technical research that informed simulation accuracy and hardware feasibility.</li>
+          </ul>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <section id="projects">
+    <div class="sec-head"><h2>Projects</h2><span class="rule"></span></div>
+    <div class="proj-grid">
+
+      <div class="card">
+        <div class="card-head">
+          <h3>CAN Bus Intrusion Detection &amp; Prevention System</h3>
+          <span class="datecode mono">2601</span>
+        </div>
+        <ul>
+          <li>Engineered bare&#8209;metal C firmware on STM32 for real&#8209;time, protocol&#8209;level monitoring of Controller Area Network (CAN) bus traffic on a resource&#8209;constrained microcontroller.</li>
+          <li>Designed detection algorithms covering 3 attack vectors — denial&#8209;of&#8209;service, spoofing, fuzzing — building low&#8209;level APIs for packet&#8209;level inspection and firmware debugging.</li>
+        </ul>
+        <div class="tags mono"><span class="tag">STM32</span><span class="tag">CAN</span><span class="tag">RTOS</span><span class="tag">Embedded C</span><span class="tag">ST-Link/SWD</span></div>
+      </div>
+
+      <div class="card">
+        <div class="card-head">
+          <h3>TinyML Human Activity Recognition</h3>
+          <span class="datecode mono">2512</span>
+        </div>
+        <ul>
+          <li>Built a real&#8209;time human activity recognition system on STM32, interfacing an MPU6050 IMU over I2C for motion&#8209;data acquisition under tight timing and memory constraints.</li>
+          <li>Debugged the sensor&#8209;acquisition and on&#8209;device inference pipeline directly on hardware, applying structured hardware&#8209;software co&#8209;verification.</li>
+        </ul>
+        <div class="tags mono"><span class="tag">STM32</span><span class="tag">MPU6050</span><span class="tag">I2C</span><span class="tag">TinyML</span></div>
+      </div>
+
+      <div class="card">
+        <div class="card-head">
+          <h3>PCOS/PCOD Health Monitoring Wearable</h3>
+          <span class="datecode mono">2506</span>
+        </div>
+        <ul>
+          <li>Delivered STM32 firmware for physiological sensor acquisition and continuous health monitoring, integrating a heartbeat sensor, pulse oximeter and temperature sensor for real&#8209;time data capture.</li>
+        </ul>
+        <div class="tags mono"><span class="tag">STM32</span><span class="tag">Heartbeat Sensor</span><span class="tag">Pulse Oximeter</span><span class="tag">Temp Sensor</span></div>
+      </div>
+
+      <div class="card">
+        <div class="card-head">
+          <h3>ESP32 Home Automation System</h3>
+          <span class="datecode mono">2409</span>
+        </div>
+        <ul>
+          <li>Implemented embedded C firmware for an ESP32&#8209;based home automation system with Bluetooth&#8209;controlled operation, integrating sensor and actuator interfacing for automated device control.</li>
+        </ul>
+        <div class="tags mono"><span class="tag">ESP32</span><span class="tag">Bluetooth</span><span class="tag">Embedded C</span></div>
+      </div>
+
+      <div class="card">
+        <div class="card-head">
+          <h3>Face Recognition Attendance System</h3>
+          <span class="datecode mono">2406</span>
+        </div>
+        <ul>
+          <li>Built a Raspberry Pi&#8209;based automated attendance system using OpenCV, a Pi Camera and an I2C LCD display, with a Python/Flask backend for real&#8209;time attendance logging.</li>
+        </ul>
+        <div class="tags mono"><span class="tag">Raspberry Pi</span><span class="tag">OpenCV</span><span class="tag">Python</span><span class="tag">Flask</span><span class="tag">I2C LCD</span></div>
+      </div>
+
+      <div class="card">
+        <div class="card-head">
+          <h3>Ultrasonic Vision — Wearable Assistive Device</h3>
+          <span class="datecode mono">2304</span>
+        </div>
+        <ul>
+          <li>Prototyped an Arduino&#8209;based (8&#8209;bit AVR) obstacle&#8209;detection system using ultrasonic sensors, with Bluetooth alerts and buzzer&#8209;based feedback for real&#8209;time proximity warnings.</li>
+        </ul>
+        <div class="tags mono"><span class="tag">Arduino</span><span class="tag">AVR</span><span class="tag">Ultrasonic Sensor</span><span class="tag">Bluetooth</span></div>
+      </div>
+
+    </div>
+  </section>
+
+  <section id="skills">
+    <div class="sec-head"><h2>Characteristics</h2><span class="rule"></span></div>
+    <div class="spectable">
+      <div class="spec-row"><div class="cat">Programming</div><div class="val">C, C++, Embedded C, Python — data structures &amp; programming fundamentals, low&#8209;level API and driver design</div></div>
+      <div class="spec-row"><div class="cat">Microcontroller SoCs</div><div class="val">Bare&#8209;metal (no&#8209;OS) firmware, ARM Cortex&#8209;M (STM32, STM32CubeIDE, HAL &amp; LL drivers), ESP32, 8&#8209;bit Arduino/AVR, Raspberry Pi, RTOS</div></div>
+      <div class="spec-row"><div class="cat">Protocols &amp; Wireless</div><div class="val">CAN, I2C, SPI, UART/RS&#8209;232, GPIO, PWM, Bluetooth (BLE)</div></div>
+      <div class="spec-row"><div class="cat">RTL &amp; Verification</div><div class="val">Verilog, SystemVerilog, RTL simulators &amp; waveform viewers, hardware&#8209;software co&#8209;verification</div></div>
+      <div class="spec-row"><div class="cat">Debug &amp; Validation</div><div class="val">ST&#8209;Link/SWD, oscilloscope, DMM, bench testing, BLE functional/connectivity testing, regression testing</div></div>
+      <div class="spec-row"><div class="cat">Environment &amp; Tools</div><div class="val">Linux (Raspberry Pi OS), Git, GitHub, STM32CubeIDE, Arduino IDE, RoboDK</div></div>
+      <div class="spec-row"><div class="cat">Hardware</div><div class="val">Circuit analysis, soldering (SMD/through&#8209;hole), sensor &amp; actuator integration, PCB prototyping, hardware bring&#8209;up</div></div>
+      <div class="spec-row"><div class="cat">Soft Skills</div><div class="val">Analytical &amp; problem&#8209;solving, written/verbal communication, cross&#8209;functional collaboration</div></div>
+    </div>
+  </section>
+
+  <section id="certifications">
+    <div class="sec-head"><h2>Certifications</h2><span class="rule"></span></div>
+    <ul class="cert-list">
+      <li><span class="mk mono">▪</span><span><span class="name">Embedded System Design with ARM</span><br><span class="iss">NPTEL, IIT Kharagpur</span></span></li>
+      <li><span class="mk mono">▪</span><span><span class="name">Generative AI &amp; LLM Skill Development Program</span><br><span class="iss">PragyanAI</span></span></li>
+      <li><span class="mk mono">▪</span><span><span class="name">Cybersecurity Fundamentals</span><br><span class="iss">IBM SkillsBuild</span></span></li>
+      <li><span class="mk mono">▪</span><span><span class="name">Software Engineer Intern · Python (Basic) · Problem Solving (Basic)</span><br><span class="iss">HackerRank</span></span></li>
+      <li><span class="mk mono">▪</span><span><span class="name">Signal Processing, Wireless Communications &amp; App Building Onramp</span><br><span class="iss">MATLAB Academy</span></span></li>
+    </ul>
+  </section>
+
+  <footer id="contact">
+    <div class="sec-head"><h2>Contact / Pinout</h2><span class="rule"></span></div>
+    <p class="pin-note">Open to <strong>embedded systems, IoT and automotive roles</strong>, and to <strong>MS programs in Electrical / Computer Engineering</strong> focused on embedded systems. Reach out on any pin below.</p>
+    <div class="pinout mono">
+      <a class="pin" href="mailto:anvitaghorpade@gmail.com">
+        <span class="num">PIN 1</span><span class="lbl">Email</span><span class="v">anvitaghorpade@gmail.com</span>
+      </a>
+      <a class="pin" href="tel:+918792778897">
+        <span class="num">PIN 2</span><span class="lbl">Phone</span><span class="v">+91 87927 78897</span>
+      </a>
+      <a class="pin" href="https://www.linkedin.com/in/anvita-c-s-a52881359/" target="_blank" rel="noopener">
+        <span class="num">PIN 3</span><span class="lbl">LinkedIn</span><span class="v">/in/anvita&#8209;c&#8209;s</span>
+      </a>
+      <a class="pin" href="https://github.com/anviii85" target="_blank" rel="noopener">
+        <span class="num">PIN 4</span><span class="lbl">GitHub</span><span class="v">/anviii85</span>
+      </a>
+    </div>
+    <div class="foot-end mono">
+      <span>Dayananda Sagar College of Engineering · Bengaluru</span>
+      <span>Last updated Sept 2026</span>
+    </div>
+  </footer>
+
+</main>
